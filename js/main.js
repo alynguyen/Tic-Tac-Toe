@@ -13,32 +13,29 @@ let board, turn, winner;
 
 
 /*----- event listeners -----*/ 
-
+document.querySelector('section').addEventListener('click', whenClick);
 
 /*----- functions -----*/
 init();
 
 function init() {
-  board = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-  ];
+  board = [0, 0 , 0, 0, 0, 0, 0, 0 , 0];
   turn = 1;
   winner = null;
   render();
 }
-function render() {
-  board.forEach(function(colArr, cIdx) {
-    colArr.forEach(function(sqr, rIdx) {
-      let sqrC = document.getElementById(`c${cIdx}r${rIdx}`);
-      sqrC.style.backgroundColor = BOARDCOL[sqr];
-      console.log('colArr');
-    });
-  });
 
+function render() {
+  board.forEach(function(sqr, idx) {
+    let squares = document.getElementById(`sqr${idx}`);
+    squares.style.background = BOARDCOL[sqr];
+    console.log(squares);
+  });
 }
 
 function whenClick(evt) {
-  
+  var idx = parseInt(evt.target.id.replace('sqr', ''));
+  board[idx] = turn;
+  turn *= -1;
+  render();
 }

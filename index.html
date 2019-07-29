@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tic Tac Toe</title>
+  <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <script defer src="js/main.js"></script>
 </head>
 <body>
-  <h1>Tic Tac Toe</h1>
+  <h1>Game of     <br>Tic Tac Toe</h1>
+  <h2 id="msg">
+    Choose your house: 
+    <button id="starkInit">Starks</button>
+    <button id="lanniInit">Lannisters</button>
+  </h2>
   <section>
     <div id="sqr0"></div>
     <div id="sqr1"></div>
@@ -21,6 +27,6 @@
     <div id="sqr7"></div>
     <div id="sqr8"></div>
   </section>
-  <button id="reset">Reset</button>
+  <button id="reset" onclick="location.reload()">Reset</button>
 </body>
 </html>
